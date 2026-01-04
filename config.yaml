@@ -252,6 +252,12 @@ proxy-groups:
     type: url-test
     interval: 300
     tolerance: 50
+  - name: 🇦🇺 澳洲节点
+    include-all: true
+    filter: (?i)AU|Australia|Sydney|Melbourne|悉尼|墨尔本|澳
+    type: url-test
+    interval: 300
+    tolerance: 50
   - name: 🎥 奈飞节点
     include-all: true
     filter: (?i)NF|奈飞|解锁|Netflix|NETFLIX|Media
@@ -510,7 +516,7 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-    
+
 rules:
   - "RULE-SET,wechat,DIRECT"
   - "RULE-SET,jp,🇯🇵 日本节点"
