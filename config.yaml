@@ -3,7 +3,6 @@ proxy-groups:
     type: select
     proxies:
       - 🇺🇲 美国节点
-      - 🇺🇲 负载均衡
       - ♻️ 自动选择
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
