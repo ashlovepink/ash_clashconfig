@@ -36,13 +36,13 @@ proxy-groups:
   - name: 💬 OpenAi
     type: select
     proxies:
-      - 🇺🇲 美国节点
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - DIRECT
@@ -62,10 +62,10 @@ proxy-groups:
   - name: 🎥 奈飞视频
     type: select
     proxies:
-      - 🇸🇬 狮城节点
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎥 奈飞节点
+      - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
       - 🇯🇵 日本节点
@@ -171,7 +171,6 @@ proxy-groups:
   - name: 🎮 游戏平台
     type: select
     proxies:
-      - 🇦🇺 澳洲节点
       - DIRECT
       - 🚀 节点选择
       - 🇺🇲 美国节点
