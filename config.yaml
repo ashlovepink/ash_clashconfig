@@ -2,6 +2,7 @@ proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
+      - 🚀 手动切换
       - ♻️ 自动选择
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
@@ -9,7 +10,6 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
-      - 🚀 手动切换
       - DIRECT
   - name: 🚀 手动切换
     include-all: true
