@@ -476,6 +476,20 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  ChinaIp:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaIp.list
+    path: ./ruleset/ChinaIp.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  AI:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/AI.list
+    path: ./ruleset/AI.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   ash:
     url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/ash.list
     path: ./ruleset/ash.list
@@ -504,9 +518,9 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-  SteamCN:
-    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/SteamCN.list
-    path: ./ruleset/SteamCN.list
+  Porn:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Porn.list
+    path: ./ruleset/Porn.list
     behavior: classical
     interval: 86400
     format: text
@@ -527,7 +541,8 @@ rule-providers:
     type: http
 
 rules:
-  - "RULE-SET,SteamCN,DIRECT"
+  - "RULE-SET,Porn,🚀 节点选择"
+  - "RULE-SET,AI,💬 OpenAi"
   - "RULE-SET,wechat,DIRECT"
   - "RULE-SET,jp,🇯🇵 日本节点"
   - "RULE-SET,reject,REJECT"
@@ -561,6 +576,7 @@ rules:
   - "RULE-SET,ChinaMedia,🌏 国内媒体"
   - "RULE-SET,ProxyMedia,🌍 国外媒体"
   - "RULE-SET,ProxyGFWlist,🚀 节点选择"
+  - "RULE-SET,ChinaIp,🎯 全球直连"
   - "RULE-SET,ChinaDomain,🎯 全球直连"
   - "RULE-SET,ChinaCompanyIp,🎯 全球直连"
   - "RULE-SET,Download,🎯 全球直连"
