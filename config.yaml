@@ -468,8 +468,56 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-
+  ash:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/ash.list
+    path: ./ruleset/ash.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  turtlewow:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/turtlewow.list
+    path: ./ruleset/turtlewow.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  jp:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/jp.list
+    path: ./ruleset/jp.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  wechat:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/wechat.list
+    path: ./ruleset/wechat.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  direct:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/direct.list
+    path: ./ruleset/direct.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  reject:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/reject.list
+    path: ./ruleset/reject.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+    
 rules:
+  - "RULE-SET,wechat,DIRECT"
+  - "RULE-SET,jp,🇯🇵 日本节点"
+  - "RULE-SET,reject,REJECT"
+  - "RULE-SET,direct,DIRECT"
+  - "RULE-SET,turtlewow,🇭🇰 香港节点"
+  - "RULE-SET,ash,🚀 节点选择"
   - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
   - "RULE-SET,UnBan,🎯 全球直连"
   - "RULE-SET,BanAD,🛑 广告拦截"
