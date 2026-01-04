@@ -1,0 +1,71 @@
+
+port: 8888
+socks-port: 8889
+
+redir-port: 23457
+allow-lan: true
+mode: rule
+log-level: error
+external-controller: 192.168.50.1:9990
+experimental:
+  ignore-resolve-fail: true
+external-ui: dashboard
+external-ui-name: zashboard
+external-ui-url: https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip
+secret: "clash"
+profile:
+  store-selected: false
+  store-fake-ip: false
+ipv6: false
+unified-delay: true
+geodata-mode: true
+geox-url:
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/flyhigherpi/merlinclash_clash_related@refs/heads/master/geosite/geosite.dat"
+hosts:
+  services.googleapis.cn: 74.125.193.94
+  time.android.com: 203.107.6.88
+  
+routing-mark: 255
+
+dns:
+  enable: true
+  ipv6: false
+  listen: :23453
+  enhanced-mode: redir-host
+  respect-rules: true
+  proxy-server-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  nameserver-policy:
+    "+.steampowered.com": "223.5.5.5"
+    "geosite: gfw":
+      - https://dns.dns-53.us/dns-query
+      - tls://sg01.dns4me.net
+      - tls://unfiltered.adguard-dns.com
+  nameserver:
+    - https://doh.pub/dns-query
+    - 223.5.5.5
+
+tproxy: true
+tproxy-port: 23458
+
+sniffer:
+  enable: true
+  force-dns-mapping: false
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    
+    HTTP:   
+      ports: [80, 8080-8880]
+      override-destination: false
+  force-domain:
+    - '+.v2ex.com'
+    
+  skip-domain:
+    - 'Mijia Cloud'
+    - 'dlg.io.mi.com'
+    - '+.apple.com'
