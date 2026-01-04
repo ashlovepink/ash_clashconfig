@@ -504,6 +504,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  SteamCN:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/SteamCN.list
+    path: ./ruleset/SteamCN.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   direct:
     url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/direct.list
     path: ./ruleset/direct.list
@@ -520,6 +527,7 @@ rule-providers:
     type: http
 
 rules:
+  - "RULE-SET,SteamCN,DIRECT"
   - "RULE-SET,wechat,DIRECT"
   - "RULE-SET,jp,🇯🇵 日本节点"
   - "RULE-SET,reject,REJECT"
