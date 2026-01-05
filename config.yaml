@@ -284,24 +284,24 @@ proxy-groups:
     type: load-balance
     strategy: round-robin
     interval: 300
-  - name: 🇺🇲 负载均衡 [A]
+  - name: 🇺🇲 [A]美国
     include-all: true
     filter: (?i)美国.*\[A\]
-    type: load-balance
-    strategy: round-robin
+    type: url-test
     interval: 300
-  - name: 🇺🇲 负载均衡 [R]
+    tolerance: 50
+  - name: 🇺🇲 [R]美国
     include-all: true
     filter: (?i)美国.*\[R\]
-    type: load-balance
-    strategy: round-robin
+    type: url-test
     interval: 300
-  - name: 🇺🇲 负载均衡 [F]
+    tolerance: 50
+  - name: 🇺🇲 [F]美国
     include-all: true
     filter: (?i)美国.*\[F\]
-    type: load-balance
-    strategy: round-robin
+    type: url-test
     interval: 300
+    tolerance: 50
 
 rule-providers:
   LocalAreaNetwork:
