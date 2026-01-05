@@ -284,24 +284,6 @@ proxy-groups:
     type: load-balance
     strategy: round-robin
     interval: 300
-  - name: 🇺🇲 [A]US
-    include-all: true
-    filter: (?i)美国.*\[A\]
-    type: url-test
-    interval: 300
-    tolerance: 50
-  - name: 🇺🇲 [R]US
-    include-all: true
-    filter: (?i)美国.*\[R\]
-    type: url-test
-    interval: 300
-    tolerance: 50
-  - name: 🇺🇲 [F]US
-    include-all: true
-    filter: (?i)美国.*\[F\]
-    type: url-test
-    interval: 300
-    tolerance: 50
 
 rule-providers:
   LocalAreaNetwork:
