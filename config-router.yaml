@@ -25,7 +25,6 @@ geox-url:
 hosts:
   services.googleapis.cn: 74.125.193.94
   time.android.com: 203.107.6.88
-  fnos.pinkcosmos.xyz: 192.168.50.98
   
 routing-mark: 255
 
