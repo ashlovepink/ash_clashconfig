@@ -37,8 +37,8 @@ proxy-groups:
   - name: 💬 Ai服务
     type: select
     proxies:
-      - 🇺🇲 美国节点
       - 🚀 节点选择
+      - 🇺🇲 美国节点
       - ♻️ 自动选择
       - 🇸🇬 狮城节点
       - 🇭🇰 香港节点
@@ -185,9 +185,9 @@ proxy-groups:
   - name: 🎮 游戏平台
     type: select
     proxies:
+      - 🚀 节点选择
       - 🇦🇺 澳洲节点
       - DIRECT
-      - 🚀 节点选择
       - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
@@ -201,6 +201,8 @@ proxy-groups:
     filter: (?i)网易|音乐|NetEase|Music
     proxies:
       - DIRECT
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
       - 🚀 节点选择
       - ♻️ 自动选择
   - name: 🎯 全球直连
@@ -559,7 +561,28 @@ rule-providers:
     interval: 86400
     format: text
     type: http
-
+  BanEasyList:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list
+    path: ./ruleset/BanEasyList.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BanEasyListChina:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list
+    path: ./ruleset/BanEasyListChina.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BanEasyPrivacy:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list
+    path: ./ruleset/BanEasyPrivacy.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+    
 rules:
   - "RULE-SET,Porn,👅 PORN"
   - "RULE-SET,AI,💬 Ai服务"
@@ -573,6 +596,9 @@ rules:
   - "RULE-SET,UnBan,🎯 全球直连"
   - "RULE-SET,BanAD,🛑 广告拦截"
   - "RULE-SET,BanProgramAD,🍃 应用净化"
+  - "RULE-SET,BanEasyList,🛑 广告拦截"
+  - "RULE-SET,BanEasyListChina,🛑 广告拦截"
+  - "RULE-SET,BanEasyPrivacy,🛑 广告拦截"
   - "RULE-SET,GoogleFCM,📢 谷歌FCM"
   - "RULE-SET,GoogleCN,🎯 全球直连"
   - "RULE-SET,SteamCN,🎯 全球直连"
