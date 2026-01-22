@@ -586,10 +586,10 @@ rule-providers:
 rules:
   - "RULE-SET,Porn,👅 PORN"
   - "RULE-SET,AI,💬 Ai服务"
-  - "RULE-SET,wechat,DIRECT"
+  - "RULE-SET,wechat,🎯 全球直连"
   - "RULE-SET,jp,🇯🇵 日本节点"
   - "RULE-SET,reject,REJECT"
-  - "RULE-SET,direct,DIRECT"
+  - "RULE-SET,direct,🎯 全球直连"
   - "RULE-SET,turtlewow,🇭🇰 香港节点"
   - "RULE-SET,ash,🚀 节点选择"
   - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
