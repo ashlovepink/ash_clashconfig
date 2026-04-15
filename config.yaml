@@ -47,6 +47,18 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🚀 手动切换
       - DIRECT
+  - name: 🎨 Lovart
+    type: select
+    proxies:
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇨🇳 台湾节点
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇺🇲 美国节点
+      - 🚀 手动切换
+      - DIRECT
   - name: 👅 PORN
     type: select
     proxies:
@@ -512,6 +524,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  lovart:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/main/Rullset/lovart.list
+    path: ./ruleset/lovart.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   ash:
     url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/ash.list
     path: ./ruleset/ash.list
@@ -586,6 +605,7 @@ rule-providers:
 rules:
   - "RULE-SET,Porn,👅 PORN"
   - "RULE-SET,AI,💬 Ai服务"
+  - "RULE-SET,lovart,🎨 Lovart"
   - "RULE-SET,wechat,🎯 全球直连"
   - "RULE-SET,jp,🇯🇵 日本节点"
   - "RULE-SET,reject,REJECT"
