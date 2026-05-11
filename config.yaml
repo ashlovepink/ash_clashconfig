@@ -81,6 +81,16 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - 🚀 手动切换
       - DIRECT
+  - name: Notion
+    type: select
+    proxies:
+      - 🇯🇵 日本节点
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇺🇲 美国节点
+      - 🚀 节点选择
+      - DIRECT
   - name: 👅 PORN
     type: select
     proxies:
@@ -580,6 +590,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  notion:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/notion.list
+    path: ./ruleset/notion.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   lovart:
     url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/main/Rullset/lovart.list
     path: ./ruleset/lovart.list
@@ -663,6 +680,7 @@ rules:
   - "RULE-SET,AI,💬 Ai服务"
   - "RULE-SET,Crypto,💰 加密货币"
   - "RULE-SET,lovart,🎨 Lovart"
+  - "RULE-SET,notion,Notion"
   - "RULE-SET,wechat,🎯 全球直连"
   - "RULE-SET,jp,🇯🇵 日本节点"
   - "RULE-SET,reject,REJECT"
