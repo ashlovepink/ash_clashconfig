@@ -605,6 +605,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  deribit:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/deribit.list
+    path: ./ruleset/deribit.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   notion:
     url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/notion.list
     path: ./ruleset/notion.list
@@ -707,6 +714,7 @@ rule-providers:
 rules:
   - "RULE-SET,Porn,👅 PORN"
   - "RULE-SET,AI,💬 Ai服务"
+  - "RULE-SET,deribit,💰 加密货币"
   - "RULE-SET,Crypto,💰 加密货币"
   - "RULE-SET,lovart,🎨 Lovart"
   - "RULE-SET,figma,🎨 Figma"
