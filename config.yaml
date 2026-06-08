@@ -668,6 +668,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  duolingo:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/duolingo.list
+    path: ./ruleset/duolingo.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   reject:
     url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/reject.list
     path: ./ruleset/reject.list
@@ -707,6 +714,7 @@ rules:
   - "RULE-SET,wechat,🎯 全球直连"
   - "RULE-SET,jp,🇯🇵 日本节点"
   - "RULE-SET,reject,REJECT"
+  - "RULE-SET,duolingo,🚀 节点选择"
   - "RULE-SET,direct,🎯 全球直连"
   - "RULE-SET,turtlewow,🇭🇰 香港节点"
   - "RULE-SET,ash,🚀 节点选择"
