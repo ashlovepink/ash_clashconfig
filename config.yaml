@@ -612,6 +612,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  polymarket:
+    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/polymarket.list
+    path: ./ruleset/polymarket.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   notion:
     url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/notion.list
     path: ./ruleset/notion.list
@@ -715,6 +722,7 @@ rules:
   - "RULE-SET,Porn,👅 PORN"
   - "RULE-SET,AI,💬 Ai服务"
   - "RULE-SET,deribit,💰 加密货币"
+  - "RULE-SET,polymarket,💰 加密货币"
   - "RULE-SET,Crypto,💰 加密货币"
   - "RULE-SET,lovart,🎨 Lovart"
   - "RULE-SET,figma,🎨 Figma"
