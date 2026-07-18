@@ -424,7 +424,7 @@ rule-providers:
     format: text
     type: http
   SteamDownload:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/SteamDownload.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/SteamDownload.list
     path: ./ruleset/SteamDownload.list
     behavior: classical
     interval: 86400
@@ -613,63 +613,63 @@ rule-providers:
     format: text
     type: http
   deribit:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/deribit.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/deribit.list
     path: ./ruleset/deribit.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   polymarket:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/polymarket.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/polymarket.list
     path: ./ruleset/polymarket.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   notion:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/notion.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/notion.list
     path: ./ruleset/notion.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   lovart:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/main/Rullset/lovart.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/main/Rullset/lovart.list
     path: ./ruleset/lovart.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   figma:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/figma.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/figma.list
     path: ./ruleset/figma.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   ash:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/ash.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/ash.list
     path: ./ruleset/ash.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   turtlewow:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/turtlewow.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/turtlewow.list
     path: ./ruleset/turtlewow.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   jp:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/jp.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/jp.list
     path: ./ruleset/jp.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   wechat:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/wechat.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/wechat.list
     path: ./ruleset/wechat.list
     behavior: classical
     interval: 86400
@@ -683,42 +683,42 @@ rule-providers:
     format: text
     type: http
   direct:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/direct.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/direct.list
     path: ./ruleset/direct.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   duolingo:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/duolingo.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/duolingo.list
     path: ./ruleset/duolingo.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   reject:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/reject.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/reject.list
     path: ./ruleset/reject.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   BanEasyList:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list
     path: ./ruleset/BanEasyList.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   BanEasyListChina:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list
     path: ./ruleset/BanEasyListChina.list
     behavior: classical
     interval: 86400
     format: text
     type: http
   BanEasyPrivacy:
-    url: https://proxy.api.030101.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list
     path: ./ruleset/BanEasyPrivacy.list
     behavior: classical
     interval: 86400
