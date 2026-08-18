@@ -727,6 +727,7 @@ rule-providers:
     
 rules:
   - "RULE-SET,Porn,👅 PORN"
+  - "DOMAIN-SUFFIX,notebook.google,💬 Ai服务"
   - "RULE-SET,AI,💬 Ai服务"
   - "RULE-SET,deribit,💰 加密货币"
   - "RULE-SET,polymarket,💰 加密货币"
