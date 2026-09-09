@@ -2,6 +2,8 @@ dns:
   fake-ip-filter:
     - '+.pinkuni.asia'
     - '+.argotunnel.com'
+    - '+.tailscale.com'
+    - '+.ts.net'
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -730,6 +732,8 @@ rule-providers:
     type: http
     
 rules:
+  - "PROCESS-NAME,tailscaled,DIRECT"
+  - "PROCESS-NAME,tailscale,DIRECT"
   - "RULE-SET,Porn,👅 PORN"
   - "DOMAIN-SUFFIX,notebook.google,💬 Ai服务"
   - "RULE-SET,AI,💬 Ai服务"
