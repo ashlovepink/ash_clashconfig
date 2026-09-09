@@ -1,3 +1,7 @@
+dns:
+  fake-ip-filter:
+    - '+.pinkuni.asia'
+    - '+.argotunnel.com'
 proxy-groups:
   - name: 🚀 节点选择
     type: select
