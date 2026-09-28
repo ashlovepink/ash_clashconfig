@@ -1,9 +1,20 @@
+ipv6: true
+
 dns:
+  ipv6: true
   fake-ip-filter:
     - '+.pinkuni.asia'
     - '+.argotunnel.com'
     - '+.tailscale.com'
-    - '+.ts.net'
+
+proxies:
+  - name: 🛰️ Tailscale
+    type: tailscale
+    state-dir: ./tailscale
+    ephemeral: false
+    udp: true
+    accept-routes: true
+
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -22,10 +33,12 @@ proxy-groups:
       - DIRECT
   - name: 🚀 手动切换
     include-all: true
+    exclude-filter: (?i)Tailscale
     type: select
   - name: ♻️ 自动选择
     type: url-test
     include-all: true
+    exclude-filter: (?i)Tailscale
     interval: 300
     tolerance: 50
   - name: 📲 电报消息
@@ -741,6 +754,8 @@ rule-providers:
 rules:
   - "PROCESS-NAME,tailscaled,DIRECT"
   - "PROCESS-NAME,tailscale,DIRECT"
+  - "IP-CIDR,100.64.0.0/10,🛰️ Tailscale,no-resolve"
+  - "IP-CIDR,192.168.50.0/24,🛰️ Tailscale,no-resolve"
   - "RULE-SET,Porn,👅 PORN"
   - "DOMAIN-SUFFIX,notebook.google,💬 Ai服务"
   - "RULE-SET,AI,💬 Ai服务"
