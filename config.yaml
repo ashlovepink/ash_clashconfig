@@ -7,7 +7,7 @@ dns:
     - '+.argotunnel.com'
     - '+.tailscale.com'
 
-proxies:
+proxies+:
   - name: 🛰️ Tailscale
     type: tailscale
     state-dir: ./tailscale
