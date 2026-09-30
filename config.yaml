@@ -395,8 +395,8 @@ proxy-groups:
   - name: 🔗 Tailscale
     type: select
     proxies:
-      - DIRECT
       - 🛰️ Tailscale
+      - DIRECT
 
 rule-providers:
   LocalAreaNetwork:
