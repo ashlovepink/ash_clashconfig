@@ -16,6 +16,11 @@ proxies+:
     accept-routes: true
 
 proxy-groups:
+  - name: 🔗 Tailscale
+    type: select
+    proxies:
+      - DIRECT
+      - 🛰️ Tailscale
   - name: 🚀 节点选择
     type: select
     proxies:
@@ -754,8 +759,8 @@ rule-providers:
 rules:
   - "PROCESS-NAME,tailscaled,DIRECT"
   - "PROCESS-NAME,tailscale,DIRECT"
-  - "IP-CIDR,100.64.0.0/10,🛰️ Tailscale,no-resolve"
-  - "IP-CIDR,192.168.50.0/24,🛰️ Tailscale,no-resolve"
+  - "IP-CIDR,100.64.0.0/10,🔗 Tailscale,no-resolve"
+  - "IP-CIDR,192.168.50.0/24,🔗 Tailscale,no-resolve"
   - "RULE-SET,Porn,👅 PORN"
   - "DOMAIN-SUFFIX,notebook.google,💬 Ai服务"
   - "RULE-SET,AI,💬 Ai服务"
