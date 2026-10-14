@@ -399,6 +399,13 @@ proxy-groups:
       - DIRECT
 
 rule-providers:
+  Azure:
+    url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/Azure.list
+    path: ./ruleset/Azure.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   LocalAreaNetwork:
     url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/LocalAreaNetwork.list
     path: ./ruleset/LocalAreaNetwork.list
@@ -758,12 +765,17 @@ rule-providers:
     type: http
     
 rules:
+  - "DOMAIN-SUFFIX,argotunnel.com,DIRECT"
+  - "DOMAIN,api.cloudflare.com,DIRECT"
+  - "IP-CIDR,198.41.192.0/24,DIRECT,no-resolve"
+  - "IP-CIDR,198.41.200.0/24,DIRECT,no-resolve"
   - "PROCESS-NAME,tailscaled,DIRECT"
   - "PROCESS-NAME,tailscale,DIRECT"
   - "IP-CIDR,100.64.0.0/10,🔗 Tailscale,no-resolve"
   - "IP-CIDR,192.168.50.0/24,🔗 Tailscale,no-resolve"
   - "RULE-SET,Porn,👅 PORN"
   - "DOMAIN-SUFFIX,notebook.google,💬 Ai服务"
+  - "RULE-SET,Azure,DIRECT"
   - "RULE-SET,AI,💬 Ai服务"
   - "RULE-SET,deribit,💰 加密货币"
   - "RULE-SET,polymarket,💰 加密货币"
