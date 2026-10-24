@@ -765,6 +765,8 @@ rule-providers:
     type: http
     
 rules:
+  # NAS-PINK QB 使用 SOCKS 入口时固定直连；透明代理连接继续按原规则分流
+  - "AND,((SRC-IP-CIDR,192.168.50.100/32),(IN-TYPE,SOCKS)),DIRECT"
   - "DOMAIN-SUFFIX,argotunnel.com,DIRECT"
   - "DOMAIN,api.cloudflare.com,DIRECT"
   - "IP-CIDR,198.41.192.0/24,DIRECT,no-resolve"
