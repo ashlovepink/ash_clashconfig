@@ -1,6 +1,23 @@
 ipv6: true
 
 dns:
+  # DNS 与数据分流共用已有 list；列表更新后同时生效
+  direct-nameserver: &direct-dns
+    - "119.29.29.29#DIRECT"
+    - "223.5.5.5#DIRECT"
+  proxy-server-nameserver: *direct-dns
+  nameserver-policy:
+    "rule-set:Azure": *direct-dns
+    "rule-set:wechat": *direct-dns
+    "rule-set:direct": *direct-dns
+    "rule-set:LocalAreaNetwork": *direct-dns
+    "rule-set:UnBan": *direct-dns
+    "rule-set:GoogleCN": *direct-dns
+    "rule-set:SteamCN": *direct-dns
+    "rule-set:SteamDownload": *direct-dns
+    "rule-set:ChinaIp": *direct-dns
+    "rule-set:ChinaDomain": *direct-dns
+    "rule-set:Download": *direct-dns
   ipv6: true
   fake-ip-filter:
     - '+.pinkuni.asia'
