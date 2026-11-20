@@ -50,12 +50,12 @@ proxy-groups:
       - 🚀 手动切换
       - DIRECT
   - name: 💸 流量节省
-    type: url-test
-    include-all: true
+    type: fallback
+    proxies:
+      - REJECT
     filter: '(?i)\[0\.(?:[0-4][0-9]*|50*)x\]'
-    empty-fallback: REJECT
+    url: https://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
   - name: 🚀 手动切换
     include-all: true
     exclude-filter: (?i)Tailscale
