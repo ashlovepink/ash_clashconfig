@@ -52,7 +52,7 @@ proxy-groups:
   - name: 💸 流量节省
     type: url-test
     include-all: true
-    filter: '(?i)\[0\.(?:[0-5][0-9]*|60*)x\]'
+    filter: '(?i)\[0\.(?:[0-4][0-9]*|50*)x\]'
     empty-fallback: REJECT
     interval: 300
     tolerance: 50
