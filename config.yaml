@@ -412,10 +412,17 @@ proxy-groups:
   - name: 🔗 Tailscale
     type: select
     proxies:
-      - 🛰️ Tailscale
       - DIRECT
+      - 🛰️ Tailscale
 
 rule-providers:
+  HuggingFace:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/classical/huggingface.list
+    path: ./ruleset/HuggingFace.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   Azure:
     url: https://proxy.030101.xyz/https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/Azure.list
     path: ./ruleset/Azure.list
@@ -794,6 +801,7 @@ rules:
   - "IP-CIDR,192.168.50.0/24,🔗 Tailscale,no-resolve"
   - "RULE-SET,Porn,👅 PORN"
   - "DOMAIN-SUFFIX,notebook.google,💬 Ai服务"
+  - "DOMAIN-SUFFIX,anyrouter.top,💬 Ai服务"
   - "RULE-SET,Azure,DIRECT"
   - "RULE-SET,AI,💬 Ai服务"
   - "RULE-SET,deribit,💰 加密货币"
@@ -808,6 +816,7 @@ rules:
   - "RULE-SET,reject,REJECT"
   - "RULE-SET,duolingo,🚀 节点选择"
   - "RULE-SET,direct,🎯 全球直连"
+  - "RULE-SET,HuggingFace,💬 Ai服务"
   - "RULE-SET,turtlewow,🇭🇰 香港节点"
   - "RULE-SET,ash,🚀 节点选择"
   - "RULE-SET,LocalAreaNetwork,🎯 全球直连"

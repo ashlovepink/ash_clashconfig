@@ -50,3 +50,7 @@ DOMAIN-SUFFIX,fileditchfiles.st
 DOMAIN-SUFFIX,theditch.st
 DOMAIN-SUFFIX,1024terabox.com
 DOMAIN-SUFFIX,dlproxy.uk
+# Google fonts and verified Hugging Face download CDN
+DOMAIN,fonts.googleapis.com
+DOMAIN,fonts.gstatic.com
+DOMAIN,us.aws.cdn.hf.co
