@@ -1,0 +1,3 @@
+# Existing AI overrides moved out of config.yaml; no new destinations added.
+DOMAIN-SUFFIX,notebook.google
+DOMAIN-SUFFIX,anyrouter.top

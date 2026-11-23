@@ -81,6 +81,51 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - 🚀 手动切换
       - DIRECT
+  - name: ✨ Google AI
+    type: select
+    proxies:
+      - 🇸🇬 狮城节点
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇦🇺 澳洲节点
+      - 🇪🇺 欧洲节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🤖 GPT
+    type: select
+    proxies:
+      - 🇸🇬 狮城节点
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇦🇺 澳洲节点
+      - 🇪🇺 欧洲节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🧠 Claude
+    type: select
+    proxies:
+      - 🇸🇬 狮城节点
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇦🇺 澳洲节点
+      - 🇪🇺 欧洲节点
+      - 🚀 手动切换
+      - DIRECT
   - name: 💬 Ai服务
     type: select
     proxies:
@@ -424,6 +469,34 @@ proxy-groups:
       - 🛰️ Tailscale
 
 rule-providers:
+  GoogleAI:
+    url: https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/AI-GoogleAI.list
+    path: ./ruleset/GoogleAI.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GPT:
+    url: https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/AI-GPT.list
+    path: ./ruleset/GPT.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Claude:
+    url: https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/AI-Claude.list
+    path: ./ruleset/Claude.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  AIExtra:
+    url: https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/AI-Extra.list
+    path: ./ruleset/AIExtra.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   HuggingFace:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/classical/huggingface.list
     path: ./ruleset/HuggingFace.list
@@ -808,9 +881,13 @@ rules:
   - "IP-CIDR,100.64.0.0/10,🔗 Tailscale,no-resolve"
   - "IP-CIDR,192.168.50.0/24,🔗 Tailscale,no-resolve"
   - "RULE-SET,Porn,👅 PORN"
-  - "DOMAIN-SUFFIX,notebook.google,💬 Ai服务"
-  - "DOMAIN-SUFFIX,anyrouter.top,💬 Ai服务"
+  - "AND,((RULE-SET,AIExtra),(RULE-SET,GoogleAI)),✨ Google AI"
+  - "RULE-SET,AIExtra,💬 Ai服务"
   - "RULE-SET,Azure,DIRECT"
+  # 三家使用自动生成的 list；原 AI 列表保留兜底，覆盖尚未分类的上游更新
+  - "RULE-SET,GoogleAI,✨ Google AI"
+  - "RULE-SET,GPT,🤖 GPT"
+  - "RULE-SET,Claude,🧠 Claude"
   - "RULE-SET,AI,💬 Ai服务"
   - "RULE-SET,deribit,💰 加密货币"
   - "RULE-SET,polymarket,💰 加密货币"
@@ -843,7 +920,7 @@ rules:
   - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
   - "RULE-SET,Apple,🍎 苹果服务"
   - "RULE-SET,Telegram,📲 电报消息"
-  - "RULE-SET,OpenAi,💬 Ai服务"
+  - "RULE-SET,OpenAi,🤖 GPT"
   - "RULE-SET,NetEaseMusic,🎶 网易音乐"
   - "RULE-SET,Epic,🎮 游戏平台"
   - "RULE-SET,Origin,🎮 游戏平台"
