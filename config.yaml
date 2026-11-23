@@ -84,9 +84,9 @@ proxy-groups:
   - name: ✨ Google AI
     type: select
     proxies:
+      - 🇺🇲 美国节点
       - 🇸🇬 狮城节点
       - 🚀 节点选择
-      - 🇺🇲 美国节点
       - ♻️ 自动选择
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
