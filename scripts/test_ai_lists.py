@@ -12,12 +12,13 @@ spec.loader.exec_module(ai)
 
 class ListUpdateTests(unittest.TestCase):
     def test_new_upstream_entries_are_partitioned_without_changing_match_types(self):
-        original = ai.parse_rules('DOMAIN-KEYWORD,openai\nDOMAIN-SUFFIX,new.claude.example\nDOMAIN,new.google.example\nDOMAIN,new.other.example\n')
+        original = ai.parse_rules('DOMAIN-KEYWORD,openai\nDOMAIN-SUFFIX,new.claude.example\nDOMAIN,new.google.example\nDOMAIN,new.other.example\nDOMAIN-SUFFIX,anyrouter.example\n')
         groups = ai.split_rules(original)
         self.assertEqual(groups['GPT'], ['DOMAIN-KEYWORD,openai'])
         self.assertEqual(groups['Claude'], ['DOMAIN-SUFFIX,new.claude.example'])
         self.assertEqual(groups['GoogleAI'], ['DOMAIN,new.google.example'])
         self.assertEqual(groups['AI'], ['DOMAIN,new.other.example'])
+        self.assertEqual(groups['AnyRouter'], ['DOMAIN-SUFFIX,anyrouter.example'])
         self.assertEqual(set(sum(groups.values(), [])), set(original))
 
     def test_ambiguous_entry_stays_in_AI(self):
@@ -40,7 +41,7 @@ class ListUpdateTests(unittest.TestCase):
             root = Path(directory)
             target = root / 'Rullset'
             target.mkdir()
-            names = ['AI-GoogleAI.list', 'AI-GPT.list', 'AI-Claude.list', 'AI-Coverage.json']
+            names = ['AI-GoogleAI.list', 'AI-GPT.list', 'AI-Claude.list', 'AI-AnyRouter.list', 'AI-Coverage.json']
             for name in names:
                 (target / name).write_text('last valid output')
             upstream = root / 'bad-upstream.txt'

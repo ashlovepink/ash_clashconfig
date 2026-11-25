@@ -33,7 +33,7 @@ jobs:
       - name: Publish changed lists only
         shell: bash
         run: |
-          git add -- Rullset/AI-GoogleAI.list Rullset/AI-GPT.list Rullset/AI-Claude.list Rullset/AI-Coverage.json
+          git add -- Rullset/AI-GoogleAI.list Rullset/AI-GPT.list Rullset/AI-Claude.list Rullset/AI-AnyRouter.list Rullset/AI-Coverage.json
           if git diff --cached --quiet; then
             exit 0
           fi

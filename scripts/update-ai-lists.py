@@ -13,6 +13,7 @@ PRODUCTS = {
     'GoogleAI': ('google', 'antigravity'),
     'GPT': ('openai', 'chatgpt', 'oaistatic', 'oaiusercontent', 'sora'),
     'Claude': ('anthropic', 'claude', 'clau'),
+    'AnyRouter': ('anyrouter',),
 }
 
 

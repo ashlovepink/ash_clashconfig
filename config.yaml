@@ -36,10 +36,8 @@ proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
-      - 🇺🇲 美国节点
-      - 🇺🇲 负载均衡
-      - ♻️ 自动选择
       - 💸 流量节省
+      - 🇺🇲 美国节点
       - 🇭🇰 香港节点
       - 🇨🇳 台湾节点
       - 🇸🇬 狮城节点
@@ -48,24 +46,9 @@ proxy-groups:
       - 🇦🇺 澳洲节点
       - 🇪🇺 欧洲节点
       - 🚀 手动切换
+      - 🇺🇲 负载均衡
+      - ♻️ 自动选择
       - DIRECT
-  - name: 💸 流量节省
-    type: fallback
-    proxies:
-      - REJECT
-    filter: '(?i)\[0\.(?:[0-4][0-9]*|50*)x\]'
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-  - name: 🚀 手动切换
-    include-all: true
-    exclude-filter: (?i)Tailscale
-    type: select
-  - name: ♻️ 自动选择
-    type: url-test
-    include-all: true
-    exclude-filter: (?i)Tailscale
-    interval: 300
-    tolerance: 50
   - name: 📲 电报消息
     type: select
     proxies:
@@ -124,6 +107,21 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇦🇺 澳洲节点
       - 🇪🇺 欧洲节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🔀 AnyRouter
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇰🇷 韩国节点
+      - 🇦🇺 澳洲节点
+      - 🇪🇺 欧洲节点
+      - ♻️ 自动选择
       - 🚀 手动切换
       - DIRECT
   - name: 💬 Ai服务
@@ -403,6 +401,23 @@ proxy-groups:
       - 🇦🇺 澳洲节点
       - 🇪🇺 欧洲节点
       - 🚀 手动切换
+  - name: 💸 流量节省
+    type: fallback
+    proxies:
+      - REJECT
+    filter: '(?i)\[0\.(?:[0-4][0-9]*|50*)x\]'
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🚀 手动切换
+    include-all: true
+    exclude-filter: (?i)Tailscale
+    type: select
+  - name: ♻️ 自动选择
+    type: url-test
+    include-all: true
+    exclude-filter: (?i)Tailscale
+    interval: 300
+    tolerance: 50
   - name: 🇭🇰 香港节点
     include-all: true
     filter: (?i)港|HK|hk|Hong Kong|HongKong|hongkong
@@ -469,6 +484,13 @@ proxy-groups:
       - 🛰️ Tailscale
 
 rule-providers:
+  AnyRouter:
+    url: https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/AI-AnyRouter.list
+    path: ./ruleset/AnyRouter.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   GoogleAI:
     url: https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/AI-GoogleAI.list
     path: ./ruleset/GoogleAI.list
@@ -882,9 +904,10 @@ rules:
   - "IP-CIDR,192.168.50.0/24,🔗 Tailscale,no-resolve"
   - "RULE-SET,Porn,👅 PORN"
   - "AND,((RULE-SET,AIExtra),(RULE-SET,GoogleAI)),✨ Google AI"
+  - "RULE-SET,AnyRouter,🔀 AnyRouter"
   - "RULE-SET,AIExtra,💬 Ai服务"
   - "RULE-SET,Azure,DIRECT"
-  # 三家使用自动生成的 list；原 AI 列表保留兜底，覆盖尚未分类的上游更新
+  # 独立服务使用自动生成的 list；原 AI 列表保留兜底，覆盖尚未分类的上游更新
   - "RULE-SET,GoogleAI,✨ Google AI"
   - "RULE-SET,GPT,🤖 GPT"
   - "RULE-SET,Claude,🧠 Claude"
