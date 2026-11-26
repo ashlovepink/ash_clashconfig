@@ -46,5 +46,5 @@
     "DOMAIN,update.crashlytics.com",
     "DOMAIN,update.googleapis.com"
   ],
-  "boundary": "Google AI uses its original list. Existing earlier download/direct/video rules retain priority; GVT CDN and IP ownership rules are excluded; GooglePlay and Download matches bypass the broad Google rule."
+  "boundary": "Google AI uses its original list. Existing earlier download/direct/video rules retain priority; GVT CDN and IP ownership rules are excluded; GoogleDownloads, GooglePlay and Download matches bypass the broad Google rule."
 }
