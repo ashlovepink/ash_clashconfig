@@ -64,7 +64,7 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - 🚀 手动切换
       - DIRECT
-  - name: ✨ Google AI
+  - name: 🌐 Google
     type: select
     proxies:
       - 🇺🇲 美国节点
@@ -79,7 +79,7 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - 🚀 手动切换
       - DIRECT
-  - name: 🤖 GPT
+  - name: 🤖 OpenAI
     type: select
     proxies:
       - 🇸🇬 狮城节点
@@ -94,7 +94,7 @@ proxy-groups:
       - 🇪🇺 欧洲节点
       - 🚀 手动切换
       - DIRECT
-  - name: 🧠 Claude
+  - name: 🧠 Anthropic
     type: select
     proxies:
       - 🇸🇬 狮城节点
@@ -275,20 +275,6 @@ proxy-groups:
       - 🇨🇳 台湾节点
       - 🇸🇬 狮城节点
       - 🇯🇵 日本节点
-      - 🚀 手动切换
-  - name: 📢 谷歌FCM
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-      - 🇺🇲 美国节点
-      - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 狮城节点
-      - 🇯🇵 日本节点
-      - 🇰🇷 韩国节点
-      - 🇦🇺 澳洲节点
-      - 🇪🇺 欧洲节点
       - 🚀 手动切换
   - name: Ⓜ️ 微软Bing
     type: select
@@ -484,6 +470,27 @@ proxy-groups:
       - 🛰️ Tailscale
 
 rule-providers:
+  GoogleDownloads:
+    url: https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/Google-Downloads.list
+    path: ./ruleset/GoogleDownloads.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleServices:
+    url: https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/Google-Services.list
+    path: ./ruleset/GoogleServices.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GooglePlay:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/classical/google-play.list
+    path: ./ruleset/GooglePlay.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   AnyRouter:
     url: https://raw.githubusercontent.com/ashlovepink/ash_clashconfig/refs/heads/main/Rullset/AI-AnyRouter.list
     path: ./ruleset/AnyRouter.list
@@ -903,14 +910,14 @@ rules:
   - "IP-CIDR,100.64.0.0/10,🔗 Tailscale,no-resolve"
   - "IP-CIDR,192.168.50.0/24,🔗 Tailscale,no-resolve"
   - "RULE-SET,Porn,👅 PORN"
-  - "AND,((RULE-SET,AIExtra),(RULE-SET,GoogleAI)),✨ Google AI"
+  - "AND,((RULE-SET,AIExtra),(RULE-SET,GoogleAI)),🌐 Google"
   - "RULE-SET,AnyRouter,🔀 AnyRouter"
   - "RULE-SET,AIExtra,💬 Ai服务"
   - "RULE-SET,Azure,DIRECT"
   # 独立服务使用自动生成的 list；原 AI 列表保留兜底，覆盖尚未分类的上游更新
-  - "RULE-SET,GoogleAI,✨ Google AI"
-  - "RULE-SET,GPT,🤖 GPT"
-  - "RULE-SET,Claude,🧠 Claude"
+  - "RULE-SET,GoogleAI,🌐 Google"
+  - "RULE-SET,GPT,🤖 OpenAI"
+  - "RULE-SET,Claude,🧠 Anthropic"
   - "RULE-SET,AI,💬 Ai服务"
   - "RULE-SET,deribit,💰 加密货币"
   - "RULE-SET,polymarket,💰 加密货币"
@@ -934,7 +941,7 @@ rules:
   - "RULE-SET,BanEasyList,🛑 广告拦截"
   - "RULE-SET,BanEasyListChina,🛑 广告拦截"
   - "RULE-SET,BanEasyPrivacy,🛑 广告拦截"
-  - "RULE-SET,GoogleFCM,📢 谷歌FCM"
+  - "RULE-SET,GoogleFCM,🌐 Google"
   - "RULE-SET,GoogleCN,🎯 全球直连"
   - "RULE-SET,SteamCN,🎯 全球直连"
   - "RULE-SET,SteamDownload,🎯 全球直连"
@@ -943,7 +950,7 @@ rules:
   - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
   - "RULE-SET,Apple,🍎 苹果服务"
   - "RULE-SET,Telegram,📲 电报消息"
-  - "RULE-SET,OpenAi,🤖 GPT"
+  - "RULE-SET,OpenAi,🤖 OpenAI"
   - "RULE-SET,NetEaseMusic,🎶 网易音乐"
   - "RULE-SET,Epic,🎮 游戏平台"
   - "RULE-SET,Origin,🎮 游戏平台"
@@ -957,6 +964,8 @@ rules:
   - "RULE-SET,Bilibili,📺 哔哩哔哩"
   - "RULE-SET,ChinaMedia,🌏 国内媒体"
   - "RULE-SET,ProxyMedia,🌍 国外媒体"
+  # Google 应用下载与下载进程继续走既有分流；视频、直连及更新规则在前
+  - "AND,((RULE-SET,GoogleServices),(NOT,((RULE-SET,GoogleDownloads))),(NOT,((RULE-SET,GooglePlay))),(NOT,((RULE-SET,Download)))),🌐 Google"
   - "RULE-SET,ProxyGFWlist,🚀 节点选择"
   - "RULE-SET,ChinaIp,🎯 全球直连"
   - "RULE-SET,ChinaDomain,🎯 全球直连"

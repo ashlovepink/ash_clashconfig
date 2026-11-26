@@ -1,6 +1,6 @@
 # AI列表维护
 
-配置把Google AI、GPT、Claude、AnyRouter独立为四个组。config.yaml只引用自动更新的HTTP list，不维护这些服务的域名或关键词条件。
+配置把Google、OpenAI、Anthropic、AnyRouter独立为四个服务组。config.yaml只引用自动更新的HTTP list，不维护这些服务的域名或关键词条件。
 
 ## 更新链
 
@@ -35,4 +35,12 @@ python3 scripts/update-ai-lists.py
 
 AnyRouter复用同一生成器，从原AI上游和AI-Extra.list中识别anyrouter品牌条目；现有anyrouter.top规则保留DOMAIN-SUFFIX匹配方式，覆盖主站与子域名。没有新增网站清单，也不把域名写回config.yaml。原补充规则保留作兜底，独立AnyRouter规则放在它前面。
 
-AnyRouter组默认跟随节点选择；节点选择第一项为流量节省，仍按≤0.5倍候选倍率升序自动故障切换。独立服务组排在前面，流量节省、手动切换、自动选择等辅助组排在服务组后面，接各国家测速组。Google AI仍默认美国，其他服务原默认不变。
+AnyRouter组默认跟随节点选择；节点选择第一项为流量节省，仍按≤0.5倍候选倍率升序自动故障切换。独立服务组排在前面，流量节省、手动切换、自动选择等辅助组排在服务组后面，接各国家测速组。Google仍默认美国，其他服务原默认不变。
+
+## Google统一服务组（2026-11-26）
+
+UI统一为🌐 Google、🤖 OpenAI、🧠 Anthropic；内部AI-GoogleAI/GPT/Claude列表及provider键保留兼容，AI覆盖不缩小。Google AI的原16条仍较早进入Google组；普通Google使用同一更新器从ACL4SSR官方Google.list派生Google-Services.list，保留原域名匹配类型，剔除GVT下载CDN和纯IP归属规则。原谷歌FCM独立组移除，FCM规则转到Google组。默认美国。
+
+Google-Services新增规则位于既有视频、下载、GoogleCN直连规则后面，并排除GooglePlay、GoogleDownloads、Download列表命中，保留已有下载/视频策略，而不是强制所有Google域名去美国。GooglePlay直接引用已有MetaCubeX体系的google-play自动更新列表；Google-Downloads.list从ACL4SSR Google的GVT条目与MetaCubeX google-cn上游中的dl/download/update/tools/cache.pack下载更新条目自动派生。下载旁路的含义是继续执行原规则，既可仍直连，也可仍走节点选择，并非统一改成直连。
+
+同一次日更生成Google-Services.list、Google-Downloads.list、Google-Coverage.json。上游下载、解析和覆盖检查全部成功后才替换生成文件。共享域名上的业务和下载不能单凭域名严格区分，下载保持范围以这些列表和现有下载规则为准；未加入网页路径或手写完整域名表。

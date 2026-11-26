@@ -1,0 +1,50 @@
+{
+  "source_url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list",
+  "source_sha256": "16b21eebc7a8ab3c08dcdb0f601b5c0b7b4182f46643a6180dfb9bb6fb83bd61",
+  "included_rules": [
+    "DOMAIN-KEYWORD,gmail",
+    "DOMAIN-KEYWORD,google",
+    "DOMAIN-SUFFIX,1e100.net",
+    "DOMAIN-SUFFIX,2mdn.net",
+    "DOMAIN-SUFFIX,app-measurement.net",
+    "DOMAIN-SUFFIX,c.gle",
+    "DOMAIN-SUFFIX,g.co",
+    "DOMAIN-SUFFIX,ggpht.com",
+    "DOMAIN-SUFFIX,goo.gl",
+    "DOMAIN-SUFFIX,googleapis.cn",
+    "DOMAIN-SUFFIX,googleapis.com",
+    "DOMAIN-SUFFIX,gstatic.cn",
+    "DOMAIN-SUFFIX,gstatic.com",
+    "DOMAIN-SUFFIX,xn--ngstr-lra8j.com",
+    "DOMAIN-SUFFIX,youtu.be",
+    "DOMAIN-SUFFIX,youtube-nocookie.com",
+    "DOMAIN-SUFFIX,youtube.com",
+    "DOMAIN-SUFFIX,yt.be",
+    "DOMAIN-SUFFIX,ytimg.com"
+  ],
+  "excluded_rules": [
+    "DOMAIN-SUFFIX,gvt0.com",
+    "DOMAIN-SUFFIX,gvt1.com",
+    "DOMAIN-SUFFIX,gvt2.com",
+    "DOMAIN-SUFFIX,gvt3.com",
+    "IP-CIDR,74.125.0.0/16,no-resolve",
+    "IP-CIDR,173.194.0.0/16,no-resolve"
+  ],
+  "download_source_url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/google-cn.list",
+  "download_source_sha256": "8dc00735ff8db8e63d3e8375e2035a6cbe95d0ffd8a5938eb6b2653b00327d07",
+  "download_bypass_rules": [
+    "DOMAIN-SUFFIX,gvt0.com",
+    "DOMAIN-SUFFIX,gvt1.com",
+    "DOMAIN-SUFFIX,gvt2.com",
+    "DOMAIN-SUFFIX,gvt3.com",
+    "DOMAIN,cache.pack.google.com",
+    "DOMAIN,dl.google.com",
+    "DOMAIN,dl.l.google.com",
+    "DOMAIN,download.mlcc.google.com",
+    "DOMAIN,download.tensorflow.google.com",
+    "DOMAIN,tools.google.com",
+    "DOMAIN,update.crashlytics.com",
+    "DOMAIN,update.googleapis.com"
+  ],
+  "boundary": "Google AI uses its original list. Existing earlier download/direct/video rules retain priority; GVT CDN and IP ownership rules are excluded; GooglePlay and Download matches bypass the broad Google rule."
+}

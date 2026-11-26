@@ -21,6 +21,22 @@ class ListUpdateTests(unittest.TestCase):
         self.assertEqual(groups['AnyRouter'], ['DOMAIN-SUFFIX,anyrouter.example'])
         self.assertEqual(set(sum(groups.values(), [])), set(original))
 
+    def test_google_services_keep_download_cdn_and_ip_rules_out(self):
+        text = 'DOMAIN-KEYWORD,google\nDOMAIN-KEYWORD,gmail\nDOMAIN-SUFFIX,gvt1.com\nDOMAIN-SUFFIX,gvt3.com\nDOMAIN-SUFFIX,new-google-service.example\nIP-CIDR,74.125.0.0/16,no-resolve\n'
+        output = ai.build_google_services(text)['Google-Services.list']
+        self.assertIn('DOMAIN-KEYWORD,google\n', output)
+        self.assertIn('DOMAIN-SUFFIX,new-google-service.example\n', output)
+        self.assertNotIn('gvt1.com', output)
+        self.assertNotIn('gvt3.com', output)
+        self.assertNotIn('IP-CIDR', output)
+        downloads = ai.build_google_services(text, 'DOMAIN,update.googleapis.com\nDOMAIN,accounts.google.com\n')['Google-Downloads.list']
+        self.assertIn('DOMAIN,update.googleapis.com\n', downloads)
+        self.assertIn('DOMAIN-SUFFIX,gvt1.com\n', downloads)
+        self.assertNotIn('accounts.google.com', downloads)
+        for bad in ['', '<html>error</html>', 'DOMAIN-KEYWORD,google\nUNKNOWN,x\n']:
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                ai.build_google_services(bad)
+
     def test_ambiguous_entry_stays_in_AI(self):
         self.assertEqual(ai.product('DOMAIN,claude-openai.example'), 'AI')
 
@@ -41,7 +57,7 @@ class ListUpdateTests(unittest.TestCase):
             root = Path(directory)
             target = root / 'Rullset'
             target.mkdir()
-            names = ['AI-GoogleAI.list', 'AI-GPT.list', 'AI-Claude.list', 'AI-AnyRouter.list', 'AI-Coverage.json']
+            names = ['AI-GoogleAI.list', 'AI-GPT.list', 'AI-Claude.list', 'AI-AnyRouter.list', 'AI-Coverage.json', 'Google-Services.list', 'Google-Downloads.list', 'Google-Coverage.json']
             for name in names:
                 (target / name).write_text('last valid output')
             upstream = root / 'bad-upstream.txt'
